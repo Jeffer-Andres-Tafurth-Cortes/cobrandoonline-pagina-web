@@ -1,0 +1,138 @@
+.section {
+  width: 100%;
+  background: #e9f1fa;
+  padding-bottom: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Título superior */
+.header {
+  padding: 80px 20px;
+  text-align: left;
+  background: #071a40;
+}
+
+.header h1 {
+  font-size: 52px;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.header p {
+  max-width: 600px;
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ---------- GRID PRINCIPAL ---------- */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* ---------- COLUMNA IZQUIERDA ---------- */
+.left h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.subTitle {
+  color: #3a7bd5;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.text {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.infoItem {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.icon {
+  font-size: 22px;
+  color: #3a7bd5;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.data {
+  font-size: 15px;
+  color: #222;
+}
+
+/* ---------- FORMULARIO ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form label {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1.5px solid #d8d8d8;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button {
+  background: #2e89ff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background: #0667df;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 38px;
+  }
+
+  .left h2 {
+    font-size: 28px;
+  }
+}

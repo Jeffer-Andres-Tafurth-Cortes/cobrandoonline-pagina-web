@@ -1,0 +1,80 @@
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ============================
+   NAVBAR PRINCIPAL
+============================ */
+.navbar {
+  background: #051d46;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 140px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 34px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  color: #ffc436;
+}
+
+.btn {
+  background: #ffc436;
+  color: #111;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #d9a52f;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 768px) {
+  .topBar {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

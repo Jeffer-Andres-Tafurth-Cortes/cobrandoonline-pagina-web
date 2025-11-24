@@ -1,0 +1,82 @@
+.hero {
+  display: flex;
+  justify-content: center; /* Centra ambos bloques */
+  align-items: center; /* Alineación vertical */
+  gap: 80px; /* Distancia exacta entre izquierda y derecha */
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #052a61, #001a3f);
+  color: white;
+  min-height: 80vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.leftCal {
+  max-width: 550px;
+}
+
+.smallTitle {
+  color: #ffd34e;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.title {
+  font-size: 56px;
+  line-height: 1.1;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.typedText {
+  color: #ffd34e;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 35px;
+  background-color: #ffd34e;
+  padding: 12px 28px;
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background-color: #ffbe00;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 60px;
+}
+
+.image {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.rightCal {
+  display: flex;
+  align-items: center;
+}
+
+.leftCal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
