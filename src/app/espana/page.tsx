@@ -1,11 +1,19 @@
 "use client";
 
-import React from "react";
-import styles from "./Hero.module.css";
+import BenefitsEsp from "@/components/BenefitsEsp";
+import Calculator_esp from "../../components/calculators/Calculator_esp";
+import styles from "./Espana.module.css";
 import { ReactTyped } from "react-typed";
-import Calculator_col from "../../components/calculators/Calculator_col";
+import Categories from "@/components/Categories";
 
-const Hero: React.FC = () => {
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/2SLJSZ5EUTDGP1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
+
+export default function Espana() {
   return (
     <>
       {/* =====================================================
@@ -34,18 +42,20 @@ const Hero: React.FC = () => {
             <b>¡Optimiza tus finanzas ahora!</b>
           </p>
 
-          <a href="#calculadora" className={styles.button}>
+          <button onClick={handleClick} className={styles.button}>
             ¡Comienza ahora!
-          </a>
+          </button>
         </div>
 
         {/* Columna derecha: calculadora */}
         <div className={styles.rightCal}>
-          <Calculator_col />
+          <Calculator_esp />
         </div>
       </section>
+
+      <Categories />
+
+      <BenefitsEsp />
     </>
   );
-};
-
-export default Hero;
+}

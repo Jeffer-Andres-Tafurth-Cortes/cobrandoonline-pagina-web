@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import TopBar from "@/components/Topbar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import CallAction from "@/components/CallAction";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
         <TopBar />
         <Header />
         {children}
+        <CallAction />
         <Footer />
       </body>
     </html>

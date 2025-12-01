@@ -12,13 +12,28 @@ export default function TopBar() {
   return (
     <div className={styles.topBar}>
       <div className={styles.left}>
-        <a href="/">
+        <a
+          href="/https://www.facebook.com/praviceabogadosespecializados"
+          aria-label="Facebook"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={faFacebookF} />
         </a>
-        <a href="/">
+        <a
+          href="/https://www.instagram.com/pravice_abogados/"
+          aria-label="Instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={faInstagram} />
         </a>
-        <a href="/">
+        <a
+          href="https://www.tiktok.com/@pravice_abogados"
+          aria-label="TikTok"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={faTiktok} />
         </a>
       </div>

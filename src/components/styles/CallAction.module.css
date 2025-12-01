@@ -1,0 +1,94 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+  background: #0e3a67;
+  overflow: hidden;
+}
+
+/* CAPAS GEOMÉTRICAS */
+.section::before,
+.section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+/* Capa superior azul */
+.section::before {
+  background: linear-gradient(135deg, #0b4a8f 25%, transparent 25%) 0 0/300px
+      300px,
+    linear-gradient(135deg, #1a5fa2 25%, transparent 25%) 150px 150px/300px
+      300px;
+  mix-blend-mode: overlay;
+}
+
+/* Capa gris oscura */
+.section::after {
+  background: linear-gradient(135deg, #3b3b45 25%, transparent 25%) 0 0/300px
+      300px,
+    linear-gradient(135deg, #2f2f36 25%, transparent 25%) 150px 150px/300px
+      300px;
+  mix-blend-mode: multiply;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.topText {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #6bb8ff;
+}
+
+.title {
+  margin: 20px 0;
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.description {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.button {
+  background: #f4b324;
+  padding: 14px 35px;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #000;
+  display: inline-block;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #e3a01b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+}
