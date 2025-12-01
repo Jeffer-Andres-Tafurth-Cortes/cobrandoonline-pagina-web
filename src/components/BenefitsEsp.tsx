@@ -35,15 +35,17 @@ const items = [
   {
     icon: <FontAwesomeIcon icon={faUserTie} />,
     frontTitle: "Sin afectar la relación con tus clientes",
-    frontText: "",
+    frontText:
+      "Gestionamos el cobro de manera profesional, preservando la imagen de tu negocio",
     backTitle: "Sin afectar la relación con tus clientes",
-    backText: "",
+    backText:
+      "Sabemos la importancia que es mantener buenas relaciones comerciales. Gestionamos el cobro de manera profesional y respetuosa para que puedas seguir haciendo negocios con tus clientes sin tensiones innecesarias.",
   },
   {
     icon: <FontAwesomeIcon icon={faUserTie} />,
-    frontTitle: "",
+    frontTitle: "Plataforma sencilla e intuitiva",
     frontText: "",
-    backTitle: "",
+    backTitle: "Plataforma sencilla e intuitiva",
     backText: "",
   },
   {
