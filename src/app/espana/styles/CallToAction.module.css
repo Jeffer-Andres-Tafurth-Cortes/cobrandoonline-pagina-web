@@ -2,24 +2,37 @@
   position: relative;
   width: 100%;
   height: 85vh;
-  background-image: url("/tu-imagen.jpg"); /* puedes usar un video también */
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-/* Capa oscura encima del fondo */
+/* VIDEO DE FONDO */
+.videoBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* CAPA OSCURA ENCIMA DEL VIDEO */
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* oscurecimiento */
-  backdrop-filter: blur(2px); /* opcional */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
-/* Contenido centrado encima de todo */
+/* CONTENIDO */
 .content {
   position: relative;
   z-index: 2;
@@ -27,6 +40,7 @@
   padding: 0 20px;
 }
 
+/* TEXTOS */
 .topText {
   color: #5eb3e4;
   font-weight: 600;
@@ -50,22 +64,25 @@
   margin-bottom: 35px;
 }
 
+/* BOTÓN */
 .button {
   background: #f4c300;
   padding: 12px 35px;
   font-size: 17px;
   border-radius: 8px;
+  border: none;
   color: #000000;
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .button:hover {
   background: #c4911a;
 }
 
-/* Responsivo */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .title {
     font-size: 32px;

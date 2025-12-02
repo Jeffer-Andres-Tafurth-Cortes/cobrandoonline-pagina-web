@@ -1,13 +1,26 @@
 "use client";
 import styles from "./styles/CallToAction.module.css";
 
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/2SLJSZ5EUTDGP1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
+
 export default function CallToAction() {
   return (
     <section className={styles.hero}>
-      {/* Capa de oscurecimiento */}
+      {/* Video de fondo */}
+      <video className={styles.videoBg} autoPlay muted loop playsInline>
+        <source src="/counting-money.mp4" type="video/mp4" />
+        Tu navegador no soporta video HTML5
+      </video>
+
+      {/* Capa oscura encima del video */}
       <div className={styles.overlay}></div>
 
-      {/* Contenido centrado */}
+      {/* Contenido */}
       <div className={styles.content}>
         <p className={styles.topText}>
           NO DEJES QUE LOS IMPAGOS FRENE EL CRECIMIENTO DE TU NEGOCIO
@@ -25,9 +38,9 @@ export default function CallToAction() {
           negocio.
         </p>
 
-        <a href="#contacto" className={styles.button}>
+        <button className={styles.button} onClick={handleClick}>
           Contáctanos
-        </a>
+        </button>
       </div>
     </section>
   );
