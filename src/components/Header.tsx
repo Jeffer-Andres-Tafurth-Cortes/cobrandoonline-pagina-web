@@ -7,7 +7,7 @@ export default function Header() {
       {/* NAVBAR */}
       <nav className={styles.navbar}>
         <div className={styles.logo}>
-          <img src="/logo_pravice.png" alt="logo" />
+          <img src="/logo-cobrando-online.png" alt="logo" />
         </div>
 
         <ul className={styles.menu}>
@@ -25,7 +25,7 @@ export default function Header() {
           </li>
         </ul>
 
-        <Link href="/" className={styles.btn}>
+        <Link href="/conocenos" className={styles.btn}>
           Conócenos
         </Link>
       </nav>

@@ -13,7 +13,11 @@ export default function Footer() {
       <div className={styles.container}>
         {/* LOGO + TEXTO */}
         <div className={styles.left}>
-          <img src="/logo_pravice.png" className={styles.logo} alt="logo" />
+          <img
+            src="/logo-cobrando-online.png"
+            className={styles.logo}
+            alt="logo"
+          />
           <p className={styles.text}>
             <strong>Cobrando Online</strong> es tu aliado en la recuperación de
             cartera. Ofrecemos un servicio ágil, transparente y seguro para
