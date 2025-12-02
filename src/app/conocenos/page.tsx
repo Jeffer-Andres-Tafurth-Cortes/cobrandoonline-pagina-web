@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./styles/About.module.css";
 import AboutMiddle from "./AboutMiddle";
 import Stats from "./Stats";
+import FAQ from "./FAQ";
 
 const handleClick = () => {
   window.open(
@@ -75,6 +76,7 @@ export default function About() {
       </section>
       <AboutMiddle />
       <Stats />
+      <FAQ />
     </>
   );
 }

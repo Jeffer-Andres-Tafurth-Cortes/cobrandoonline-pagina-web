@@ -1,0 +1,84 @@
+.faqSection {
+  padding: 80px 20px;
+  background-color: #e8f1fb; /* Fondo suave azul claro */
+  text-align: center;
+}
+
+.subtitle {
+  color: #0072ce;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1b2e4f;
+  margin-bottom: 10px;
+}
+
+.description {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #4a5a75;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #1b2e4f;
+}
+
+.icon {
+  font-size: 18px;
+  color: #1b2e4f;
+}
+
+.answer {
+  margin-top: 15px;
+  text-align: left;
+  color: #4a5a75;
+  line-height: 1.4;
+  padding-right: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}

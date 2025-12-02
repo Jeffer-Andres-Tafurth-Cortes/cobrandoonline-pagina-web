@@ -5,6 +5,13 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/2SLJSZ5EUTDGP1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
+
 export default function MiddleHero() {
   return (
     <section className={styles.section}>
@@ -58,7 +65,9 @@ export default function MiddleHero() {
             </li>
           </ul>
 
-          <button className={styles.button}>Empieza Ahora</button>
+          <button className={styles.button} onClick={handleClick}>
+            Empieza Ahora
+          </button>
         </div>
       </div>
     </section>

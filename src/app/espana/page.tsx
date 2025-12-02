@@ -2,9 +2,10 @@
 
 import BenefitsEsp from "@/components/BenefitsEsp";
 import Calculator_esp from "../../components/calculators/Calculator_esp";
-import styles from "./Espana.module.css";
+import styles from "./styles/Espana.module.css";
 import { ReactTyped } from "react-typed";
 import Categories from "@/components/Categories";
+import CallToAction from "./CallToAction";
 
 const handleClick = () => {
   window.open(
@@ -56,6 +57,8 @@ export default function Espana() {
       <Categories />
 
       <BenefitsEsp />
+
+      <CallToAction />
     </>
   );
 }

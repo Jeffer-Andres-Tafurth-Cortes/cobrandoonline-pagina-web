@@ -1,0 +1,77 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  background-image: url("/tu-imagen.jpg"); /* puedes usar un video también */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Capa oscura encima del fondo */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* oscurecimiento */
+  backdrop-filter: blur(2px); /* opcional */
+}
+
+/* Contenido centrado encima de todo */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.topText {
+  color: #3ca0ff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.title {
+  color: white;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.description {
+  color: #dbe4f3;
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.button {
+  background: #ffc738;
+  padding: 12px 35px;
+  font-size: 17px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background: #eab22f;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+}
