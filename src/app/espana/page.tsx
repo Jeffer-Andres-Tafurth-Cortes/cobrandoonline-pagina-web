@@ -6,6 +6,7 @@ import styles from "./styles/Espana.module.css";
 import { ReactTyped } from "react-typed";
 import Categories from "@/components/Categories";
 import CallToAction from "./CallToAction";
+import Experience from "./Experience";
 
 const handleClick = () => {
   window.open(
@@ -55,6 +56,8 @@ export default function Espana() {
       </section>
 
       <Categories />
+
+      <Experience />
 
       <BenefitsEsp />
 

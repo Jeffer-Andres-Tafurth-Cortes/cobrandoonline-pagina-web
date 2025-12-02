@@ -33,13 +33,28 @@ export default function Footer() {
 
         {/* SOCIAL */}
         <div className={styles.social}>
-          <a href="#">
+          <a
+            href="https://www.facebook.com/praviceabogadosespecializados"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faFacebook} />
           </a>
-          <a href="#">
+          <a
+            href="https://www.tiktok.com/@pravice_abogados"
+            aria-label="TikTok"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faTiktok} />
           </a>
-          <a href="#">
+          <a
+            href="https://www.instagram.com/pravice_abogados/"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </div>
