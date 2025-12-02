@@ -17,7 +17,8 @@ export default function Footer() {
           <p className={styles.text}>
             <strong>Cobrando Online</strong> es tu aliado en la recuperación de
             cartera. Ofrecemos un servicio ágil, transparente y seguro para
-            gestionar deudas.
+            gestionar deudas de personas naturales, jurídicas y entidades de
+            salud, con acompañamiento jurídico especializado.
           </p>
         </div>
 
@@ -26,7 +27,7 @@ export default function Footer() {
           <FontAwesomeIcon icon={faClock} className={styles.icon} />
           <div>
             <h4>Lunes - Viernes:</h4>
-            <p>08:00 am – 06:00 pm</p>
+            <p>08:00 am - 06:00 pm</p>
           </div>
         </div>
 

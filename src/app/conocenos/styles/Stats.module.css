@@ -1,0 +1,66 @@
+.container {
+  background: linear-gradient(135deg, #08305a, #0a67a3);
+  padding: 80px 6%;
+  color: white;
+}
+
+.smallTitle {
+  font-size: 13px;
+  color: #ffc107;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.container h2 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.container p {
+  max-width: 700px;
+  margin-bottom: 40px;
+  color: #dcecff;
+  line-height: 1.7;
+}
+
+/* CONTENEDOR DE NUMEROS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
+}
+
+.stat {
+  text-align: left;
+}
+
+/* NUMEROS GRANDES */
+.number {
+  font-size: 48px;
+  font-weight: bold;
+  display: block;
+  color: white;
+}
+
+/* TEXTO INFERIOR */
+.label {
+  color: #cfe7ff;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .container h2 {
+    font-size: 30px;
+  }
+
+  .number {
+    font-size: 38px;
+  }
+}
