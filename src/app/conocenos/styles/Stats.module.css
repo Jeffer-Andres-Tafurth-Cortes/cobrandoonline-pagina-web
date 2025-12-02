@@ -1,12 +1,12 @@
 .container {
-  background: linear-gradient(135deg, #08305a, #0a67a3);
+  background: linear-gradient(135deg, #004a80, #5eb3e4);
   padding: 80px 6%;
-  color: white;
+  color: #ffffff;
 }
 
 .smallTitle {
   font-size: 13px;
-  color: #ffc107;
+  color: #f4c300;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -14,12 +14,13 @@
 .container h2 {
   font-size: 40px;
   margin: 10px 0;
+  color: #ffffff;
 }
 
 .container p {
   max-width: 700px;
   margin-bottom: 40px;
-  color: #dcecff;
+  color: #5eb3e4;
   line-height: 1.7;
 }
 
@@ -39,12 +40,12 @@
   font-size: 48px;
   font-weight: bold;
   display: block;
-  color: white;
+  color: #ffffff;
 }
 
 /* TEXTO INFERIOR */
 .label {
-  color: #cfe7ff;
+  color: #5eb3e4;
   font-size: 14px;
   margin-top: 6px;
 }

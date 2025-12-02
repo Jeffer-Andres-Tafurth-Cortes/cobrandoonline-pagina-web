@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  background: #eef5fb; /* fondo suave */
+  background: #5eb3e433; /* azul claro translúcido (fondo suave dentro de paleta) */
   padding: 40px 0;
 }
 
@@ -16,7 +16,7 @@
 
 .card {
   display: flex;
-  background: white;
+  background: #ffffff; /* tarjeta blanca */
   padding: 32px 40px;
   border-radius: 18px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -29,7 +29,7 @@
 .number {
   font-size: 52px;
   font-weight: 600;
-  color: #d1d7de;
+  color: #f4c300; /* amarillo principal para destacar el número */
   line-height: 1;
 }
 
@@ -41,13 +41,13 @@
 .title {
   font-size: 20px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #004a80; /* azul oscuro para títulos */
 }
 
 .text {
   margin-top: 5px;
   font-size: 15px;
-  color: #555;
+  color: #808080; /* gris para texto */
   line-height: 1.5;
 }
 

@@ -28,7 +28,7 @@
 }
 
 .topText {
-  color: #3ca0ff;
+  color: #5eb3e4;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 20px;
@@ -36,7 +36,7 @@
 }
 
 .title {
-  color: white;
+  color: #ffffff;
   font-size: 48px;
   font-weight: 800;
   line-height: 1.2;
@@ -44,25 +44,25 @@
 }
 
 .description {
-  color: #dbe4f3;
+  color: #ffffff;
   font-size: 17px;
   line-height: 1.6;
   margin-bottom: 35px;
 }
 
 .button {
-  background: #ffc738;
+  background: #f4c300;
   padding: 12px 35px;
   font-size: 17px;
   border-radius: 8px;
-  color: #000;
+  color: #000000;
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s ease;
 }
 
 .button:hover {
-  background: #eab22f;
+  background: #c4911a;
 }
 
 /* Responsivo */

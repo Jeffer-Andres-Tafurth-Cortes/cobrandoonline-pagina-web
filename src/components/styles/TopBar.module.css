@@ -1,33 +1,54 @@
 .topBar {
   width: 100%;
-  background: #6ebbff; /* el color azul claro */
+  background: #004a80; /* azul corporativo oscuro */
   padding: 8px 20px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: white;
+  color: #ffffff; /* blanco */
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 3px solid #f4c300; /* línea amarilla elegante */
 }
 
 .left {
   display: flex;
   gap: 18px;
   font-size: 16px;
+  color: #ffffff;
+}
+
+.left a:hover {
+  color: #f4c300;
 }
 
 .right {
   display: flex;
   gap: 30px;
   font-size: 14px;
+  color: #f7c600; /* amarillo más vivo para contraste */
 }
 
 .item {
   display: flex;
   align-items: center;
   gap: 6px;
+  color: #ffffff;
 }
 
+.item svg,
+.item i {
+  color: #5eb3e4; /* íconos azul claro */
+  font-size: 16px;
+}
+
+/* Hover profesional */
+.item:hover {
+  color: #f7c600;
+  cursor: pointer;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   .topBar {
     flex-direction: column;

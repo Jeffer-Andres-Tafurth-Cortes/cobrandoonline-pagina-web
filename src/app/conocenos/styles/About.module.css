@@ -17,7 +17,7 @@
 
 /* CONTENIDO */
 .content small {
-  color: #007bff;
+  color: #5eb3e4;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -25,10 +25,11 @@
 .content h2 {
   font-size: 34px;
   margin: 10px 0 20px;
+  color: #000000;
 }
 
 .content p {
-  color: #555;
+  color: #808080;
   line-height: 1.7;
   margin-bottom: 30px;
 }
@@ -36,7 +37,7 @@
 /* TIMELINE */
 .timeline {
   position: relative;
-  border-left: 2px solid #007bff;
+  border-left: 2px solid #5eb3e4;
   padding-left: 1.8rem;
   margin-bottom: 2rem;
 }
@@ -55,7 +56,7 @@
   top: 6px;
   width: 12px;
   height: 12px;
-  background: #007bff;
+  background: #5eb3e4;
   border-radius: 50%;
 }
 
@@ -63,19 +64,19 @@
 .item strong {
   display: block;
   font-weight: 700;
-  color: #007bff;
+  color: #004a80;
   font-size: 15px;
 }
 
 .item h4 {
   margin: 3px 0;
   font-size: 16px;
-  color: #222;
+  color: #000000;
 }
 
 .item p {
   margin: 0;
-  color: #666;
+  color: #808080;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -84,8 +85,8 @@
 .button {
   display: inline-block;
   margin-top: 20px;
-  background: #ffc107;
-  color: #000;
+  background: #f4c300;
+  color: #000000;
   padding: 12px 26px;
   border-radius: 6px;
   text-decoration: none;
@@ -95,7 +96,7 @@
 }
 
 .button:hover {
-  background: #ffb000;
+  background: #c4911a;
   transform: translateY(-2px);
 }
 

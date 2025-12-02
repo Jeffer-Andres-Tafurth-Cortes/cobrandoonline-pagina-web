@@ -1,16 +1,18 @@
 .section {
   padding: 60px 20px;
   text-align: center;
+  background: #ffffff;
 }
 
 .title {
   font-size: 2.3rem;
   font-weight: 800;
   margin-bottom: 10px;
+  color: #000000;
 }
 
 .subtitle {
-  color: #666;
+  color: #808080;
   margin-bottom: 50px;
   font-size: 1rem;
 }
@@ -51,8 +53,8 @@
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  background: #07244f;
-  color: white;
+  background: #004a80;
+  color: #ffffff;
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
@@ -71,6 +73,7 @@
 .back h3 {
   font-size: 1.2rem;
   margin-top: 15px;
+  color: #f4c300;
 }
 
 .front p,
@@ -78,11 +81,12 @@
   font-size: 0.9rem;
   margin-top: 5px;
   opacity: 0.9;
+  color: #ffffff;
 }
 
 .icon {
   font-size: 48px;
-  color: #fff;
+  color: #5eb3e4;
   opacity: 0.85;
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
 }
@@ -90,6 +94,15 @@
 /* BACK SIDE */
 .back {
   transform: rotateY(180deg);
+  background: #5eb3e4;
+}
+
+.back h3 {
+  color: #000000;
+}
+
+.back p {
+  color: #000000;
 }
 
 /* RESPONSIVE */

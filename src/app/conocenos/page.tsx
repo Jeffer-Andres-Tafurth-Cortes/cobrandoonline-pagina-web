@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./styles/About.module.css";
 import AboutMiddle from "./AboutMiddle";
 import Stats from "./Stats";

@@ -1,5 +1,5 @@
 .card {
-  background-color: #073366;
+  background-color: #004a80;
   padding: 30px;
   border-radius: 15px;
   width: 380px;
@@ -7,7 +7,7 @@
 }
 
 .title {
-  color: #ffd34e;
+  color: #f4c300;
   margin-bottom: 20px;
   font-size: 24px;
   text-align: center;
@@ -18,33 +18,38 @@
   display: block;
   font-size: 14px;
   margin-bottom: 5px;
+  color: #ffffff;
 }
 
 .input {
   width: 100%;
   padding: 10px;
   border-radius: 6px;
-  border: none;
+  border: 2px solid #5eb3e4;
   margin-bottom: 15px;
+  background-color: #ffffff;
+  color: #000;
 }
 
 .button {
   width: 100%;
-  background-color: #ffd34e;
+  background-color: #f7c600;
   padding: 12px;
   border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s;
+  color: #000;
 }
 
 .button:hover {
-  background-color: #ffbe00;
+  background-color: #c4911a;
 }
 
 .result {
   margin-top: 15px;
   font-size: 18px;
   text-align: center;
+  color: #5eb3e4;
 }

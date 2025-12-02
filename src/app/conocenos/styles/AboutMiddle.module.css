@@ -3,14 +3,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   padding: 80px 6%;
-  background: #eeeeee;
+  background: #ffffff;
   align-items: center;
 }
 
 /* PANEL IZQUIERDO */
 .left {
-  background: #071c47;
-  color: white;
+  background: #004a80;
+  color: #ffffff;
   padding: 60px;
   border-radius: 6px;
 }
@@ -19,7 +19,7 @@
   display: inline-block;
   font-size: 13px;
   font-weight: bold;
-  color: #ffc107;
+  color: #f4c300;
   margin-bottom: 15px;
 }
 
@@ -28,11 +28,12 @@
   font-size: 32px;
   line-height: 1.3;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 /* TEXTO */
 .left p {
-  color: #d9e1ff;
+  color: #5eb3e4;
   line-height: 1.7;
   margin-bottom: 20px;
 }
@@ -47,6 +48,7 @@
 .list li {
   margin-bottom: 10px;
   font-size: 15px;
+  color: #ffffff;
 }
 
 /* TEXTO DESTACADO */
@@ -60,8 +62,8 @@
 /* BOTÓN */
 .button {
   margin-top: 20px;
-  background: #ffc107;
-  color: #000;
+  background: #f4c300;
+  color: #000000;
   border: none;
   padding: 14px 24px;
   border-radius: 4px;
@@ -71,7 +73,7 @@
 }
 
 .button:hover {
-  background: #ffb000;
+  background: #c4911a;
   transform: translateY(-2px);
 }
 

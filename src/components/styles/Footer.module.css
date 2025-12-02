@@ -1,6 +1,6 @@
 .footer {
-  background: #071a40; /* Fondo azul oscuro */
-  color: white;
+  background: #004a80;
+  color: #ffffff;
   padding: 60px 20px 20px;
   width: 100%;
 }
@@ -28,7 +28,7 @@
 
 .text {
   line-height: 1.4;
-  color: #d0d6e2;
+  color: #5eb3e4;
   max-width: 500px;
 }
 
@@ -42,16 +42,18 @@
 
 .icon {
   font-size: 24px;
-  color: #ffd45a;
+  color: #f4c300;
 }
 
 .schedule h4 {
   font-size: 18px;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .schedule p {
   margin-top: 4px;
+  color: #5eb3e4;
 }
 
 /* SOCIAL */
@@ -62,21 +64,22 @@
 }
 
 .social a {
-  color: white;
+  color: #ffffff;
   transition: 0.3s;
 }
 
 .social a:hover {
-  color: #ffd45a;
+  color: #f4c300;
 }
 
 /* COPY */
 .copy {
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(94, 179, 228, 0.2);
   margin-top: 40px;
   font-size: 14px;
+  color: #5eb3e4;
 }
 
 /* RESPONSIVE */
