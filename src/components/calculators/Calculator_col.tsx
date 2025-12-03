@@ -2,19 +2,32 @@
 
 import React, { useState } from "react";
 import styles from "./Calculator_col.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBalanceScale,
+  faMoneyCheck,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Calculator_col: React.FC = () => {
   const [amount, setAmount] = useState<number | "">("");
   const [days, setDays] = useState<number | "">("");
-  const [result, setResult] = useState<number | null>(null);
+  const [totalToPay, setTotalToPay] = useState<number | null>(null);
+  const [commission, setCommission] = useState<number | null>(null);
 
   const handleCalculate = () => {
     if (!amount || !days) return;
 
-    // Ejemplo de fórmula (puedes cambiarla después)
-    const percentage = amount * 0.02 + days * 0.1;
-    setResult(percentage);
+    // 🧮 Fórmulas personalizables
+    const total = amount * 1.015; // +1.5%
+    const comision = total * 0.2; // 20%
+
+    setTotalToPay(total);
+    setCommission(comision);
   };
+
+  // Formatear con separador de miles
+  const formatCurrency = (value: number) =>
+    value.toLocaleString("es-CO", { minimumFractionDigits: 2 });
 
   return (
     <div className={styles.card} id="calculadora">
@@ -42,10 +55,23 @@ const Calculator_col: React.FC = () => {
         Calcular
       </button>
 
-      {result !== null && (
-        <p className={styles.result}>
-          Resultado: <b>${result.toFixed(2)}</b>
-        </p>
+      {totalToPay !== null && (
+        <div className={styles.resultBox}>
+          <p className={styles.resultItem}>
+            <span>
+              <FontAwesomeIcon icon={faMoneyCheck} /> Total a pagar:&nbsp;
+            </span>
+            <b>${formatCurrency(totalToPay)}</b>
+          </p>
+
+          <p className={styles.resultItem}>
+            <span>
+              <FontAwesomeIcon icon={faBalanceScale} /> Comisión Cobrando
+              Online:&nbsp;
+            </span>
+            <b>${formatCurrency(commission!)}</b>
+          </p>
+        </div>
       )}
     </div>
   );
