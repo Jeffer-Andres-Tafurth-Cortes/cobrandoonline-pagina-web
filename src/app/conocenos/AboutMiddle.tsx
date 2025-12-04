@@ -2,6 +2,13 @@ import styles from "./styles/AboutMiddle.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
+const handleClick = () => {
+  window.open(
+    "https://api.whatsapp.com/message/2SLJSZ5EUTDGP1?autoload=1&app_absent=0",
+    "_blank"
+  );
+};
+
 export default function AboutMiddle() {
   return (
     <section className={styles.hero}>
@@ -37,7 +44,9 @@ export default function AboutMiddle() {
           ¡Confía en expertos para recuperar lo que es tuyo!
         </strong>
 
-        <button className={styles.button}>Solicita tu cobro aquí</button>
+        <button className={styles.button} onClick={handleClick}>
+          Solicita tu cobro aquí
+        </button>
       </div>
 
       {/* IMAGEN DERECHA */}
