@@ -1,6 +1,6 @@
 import styles from "./styles/AboutMiddle.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faClock } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function AboutMiddle() {
   return (
@@ -21,14 +21,15 @@ export default function AboutMiddle() {
 
         <ul className={styles.list}>
           <li>
-            <FontAwesomeIcon icon={faCheck} /> Gestión rápida y segura
+            <FontAwesomeIcon icon={faCheckCircle} /> Gestión rápida y segura
           </li>
           <li>
-            <FontAwesomeIcon icon={faCheck} /> Sin adelantos ni cuotas iniciales
+            <FontAwesomeIcon icon={faCheckCircle} /> Sin adelantos ni cuotas
+            iniciales
           </li>
           <li>
-            <FontAwesomeIcon icon={faCheck} /> Comunicación profesional con tus
-            clientes
+            <FontAwesomeIcon icon={faCheckCircle} /> Comunicación profesional
+            con tus clientes
           </li>
         </ul>
 
