@@ -1,11 +1,15 @@
 import styles from "./styles/AboutMiddle.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faClock } from "@fortawesome/free-solid-svg-icons";
 
 export default function AboutMiddle() {
   return (
     <section className={styles.hero}>
       {/* PANEL IZQUIERDO */}
       <div className={styles.left}>
-        <span className={styles.badge}>🕒 SOLUCIONES A TU MEDIDA</span>
+        <span className={styles.badge}>
+          <FontAwesomeIcon icon={faClock} /> SOLUCIONES A TU MEDIDA
+        </span>
 
         <h1>¿Tus clientes no están cumpliendo con los pagos a tiempo?</h1>
 
@@ -16,9 +20,16 @@ export default function AboutMiddle() {
         </p>
 
         <ul className={styles.list}>
-          <li>✅ Gestión rápida y segura</li>
-          <li>✅ Sin adelantos ni cuotas iniciales</li>
-          <li>✅ Comunicación profesional con tus clientes</li>
+          <li>
+            <FontAwesomeIcon icon={faCheck} /> Gestión rápida y segura
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faCheck} /> Sin adelantos ni cuotas iniciales
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faCheck} /> Comunicación profesional con tus
+            clientes
+          </li>
         </ul>
 
         <strong className={styles.textBold}>
