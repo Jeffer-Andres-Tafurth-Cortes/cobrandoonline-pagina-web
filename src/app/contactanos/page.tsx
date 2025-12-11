@@ -8,6 +8,7 @@ import {
   faEnvelope,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 export default function Contacto() {
   const [nombre, setNombre] = useState("");
@@ -34,19 +35,29 @@ Mensaje: ${mensaje}`;
   return (
     <section className={styles.section}>
       {/* Título grande */}
-      <div className={styles.header}>
+      <motion.div
+        className={styles.header}
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1>Contacto</h1>
         <p>
           Si tienes dudas o necesitas ayuda con la recuperación de tus facturas,
           nuestro equipo está listo para asesorarte. Escríbenos y gestionaremos
           tus cobros de manera ágil y efectiva.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Contenido a 2 columnas */}
+      {/* Contenido de 2 columnas */}
       <div className={styles.container}>
         {/* Columna izquierda */}
-        <div className={styles.left}>
+        <motion.div
+          className={styles.left}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <span className={styles.subTitle}>CONTÁCTANOS</span>
           <h2>¿Necesitas Recuperar Tu Cartera?</h2>
 
@@ -56,34 +67,52 @@ Mensaje: ${mensaje}`;
             ayudaremos a gestionar tus cobros de manera rápida y efectiva.
           </p>
 
-          {/* Datos de contacto */}
-          <div className={styles.infoItem}>
+          {/* Info items con animación */}
+          <motion.div
+            className={styles.infoItem}
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.2 }}
+          >
             <FontAwesomeIcon icon={faPhone} className={styles.icon} />
             <div>
               <p className={styles.label}>Teléfono:</p>
               <p className={styles.data}>+57 - (323) 437 - 2766</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles.infoItem}>
+          <motion.div
+            className={styles.infoItem}
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.2 }}
+          >
             <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
             <div>
               <p className={styles.label}>Correo electronico:</p>
               <p className={styles.data}>info.pravice@gmail.com</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles.infoItem}>
+          <motion.div
+            className={styles.infoItem}
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.2 }}
+          >
             <FontAwesomeIcon icon={faLocationDot} className={styles.icon} />
             <div>
               <p className={styles.label}>Ubicación:</p>
               <p className={styles.data}>Calle 98 # 22 - 64 Of 716 · Bogotá</p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Formulario */}
-        <form className={styles.form} onSubmit={enviarWhatsApp}>
+        <motion.form
+          className={styles.form}
+          onSubmit={enviarWhatsApp}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div>
             <label>Nombre</label>
             <input
@@ -116,10 +145,16 @@ Mensaje: ${mensaje}`;
             />
           </div>
 
-          <button type="submit" className={styles.button}>
+          <motion.button
+            type="submit"
+            className={styles.button}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.15 }}
+          >
             Enviar Mensaje
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
       </div>
     </section>
   );

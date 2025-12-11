@@ -1,5 +1,7 @@
 "use client";
+
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./styles/FAQ.module.css";
 
 interface Question {
@@ -63,24 +65,39 @@ export default function FAQ() {
   return (
     <section className={styles.faqSection} id="faq">
       <p className={styles.subtitle}>FAQ</p>
-      <h2 className={styles.title}>Preguntas Frecuentes</h2>
 
-      <p className={styles.description}>
+      <motion.h2
+        className={styles.title}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Preguntas Frecuentes
+      </motion.h2>
+
+      <motion.p
+        className={styles.description}
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         En <b>Cobrando Online</b> sabemos que recuperar facturas impagadas puede
         generar dudas. Por eso, hemos recopilado las preguntas más frecuentes
-        sobre nuestro servicio, proceso de cobro y condiciones. Aquí encontrarás
-        toda la información que necesitas para gestionar tus deudas de manera
-        rápida y efectiva.
-      </p>
+        sobre nuestro servicio, proceso de cobro y condiciones.
+      </motion.p>
 
       <div className={styles.grid}>
-        {/* Columna izquierda */}
+        {/* COLUMNA IZQUIERDA */}
         <div className={styles.column}>
           {leftColumn.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className={styles.card}
               onClick={() => toggleAnswer(index)}
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <div className={styles.cardHeader}>
                 <span>{item.question}</span>
@@ -89,22 +106,40 @@ export default function FAQ() {
                 </span>
               </div>
 
-              {openIndex === index && (
-                <div className={styles.answer}>{item.answer}</div>
-              )}
-            </div>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    className={styles.answer}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {item.answer}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
 
-        {/* Columna derecha */}
+        {/* COLUMNA DERECHA */}
         <div className={styles.column}>
           {rightColumn.map((item, index) => {
             const adjustedIndex = index + leftColumn.length;
+
             return (
-              <div
+              <motion.div
                 key={adjustedIndex}
                 className={styles.card}
                 onClick={() => toggleAnswer(adjustedIndex)}
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: (index + 4) * 0.1,
+                }}
               >
                 <div className={styles.cardHeader}>
                   <span>{item.question}</span>
@@ -113,10 +148,20 @@ export default function FAQ() {
                   </span>
                 </div>
 
-                {openIndex === adjustedIndex && (
-                  <div className={styles.answer}>{item.answer}</div>
-                )}
-              </div>
+                <AnimatePresence>
+                  {openIndex === adjustedIndex && (
+                    <motion.div
+                      className={styles.answer}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {item.answer}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
         </div>
