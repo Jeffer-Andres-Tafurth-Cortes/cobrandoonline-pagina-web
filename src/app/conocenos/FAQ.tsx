@@ -51,7 +51,7 @@ const rightColumn: Question[] = [
   {
     question: "¿Qué garantías tengo de éxito en la recuperación de mi deuda?",
     answer:
-      "Si bien cada caso es diferente, nuestro equipo tiene experiencia y estrategias efectivas para maximizar la probabilidad de cobro. Además, al trabajar por comisión de éxito, nos enfocamos en obtener resultados.",
+      "Si bien cada caso es diferente, nuestro equipo tiene experiencia y estrategias efectivas para maximizar la probabilidad de cobro.",
   },
 ];
 
@@ -69,7 +69,8 @@ export default function FAQ() {
       <motion.h2
         className={styles.title}
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
         Preguntas Frecuentes
@@ -78,12 +79,12 @@ export default function FAQ() {
       <motion.p
         className={styles.description}
         initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
         En <b>Cobrando Online</b> sabemos que recuperar facturas impagadas puede
-        generar dudas. Por eso, hemos recopilado las preguntas más frecuentes
-        sobre nuestro servicio, proceso de cobro y condiciones.
+        generar dudas. Aquí resolvemos las más frecuentes.
       </motion.p>
 
       <div className={styles.grid}>
@@ -96,7 +97,8 @@ export default function FAQ() {
               onClick={() => toggleAnswer(index)}
               whileHover={{ scale: 1.02 }}
               initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <div className={styles.cardHeader}>
@@ -106,7 +108,7 @@ export default function FAQ() {
                 </span>
               </div>
 
-              <AnimatePresence>
+              <AnimatePresence mode="wait">
                 {openIndex === index && (
                   <motion.div
                     className={styles.answer}
@@ -135,7 +137,8 @@ export default function FAQ() {
                 onClick={() => toggleAnswer(adjustedIndex)}
                 whileHover={{ scale: 1.02 }}
                 initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{
                   duration: 0.4,
                   delay: (index + 4) * 0.1,
@@ -148,7 +151,7 @@ export default function FAQ() {
                   </span>
                 </div>
 
-                <AnimatePresence>
+                <AnimatePresence mode="wait">
                   {openIndex === adjustedIndex && (
                     <motion.div
                       className={styles.answer}
