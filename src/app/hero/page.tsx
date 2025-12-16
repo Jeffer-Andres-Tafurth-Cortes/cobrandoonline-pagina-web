@@ -1,12 +1,11 @@
 "use client";
 
-import React from "react";
 import styles from "./Hero.module.css";
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
 import Calculator_col from "../../components/calculators/Calculator_col";
 
-const Hero: React.FC = () => {
+function Hero() {
   return (
     <>
       <section className={styles.hero} id="inicio">
@@ -83,6 +82,6 @@ const Hero: React.FC = () => {
       </section>
     </>
   );
-};
+}
 
 export default Hero;

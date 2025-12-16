@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Calculator_col.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,7 +8,7 @@ import {
   faMoneyCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Calculator_col: React.FC = () => {
+function Calculator_col() {
   const [amount, setAmount] = useState<number | "">("");
   const [days, setDays] = useState<number | "">("");
   const [totalToPay, setTotalToPay] = useState<number | null>(null);
@@ -75,6 +75,6 @@ const Calculator_col: React.FC = () => {
       )}
     </div>
   );
-};
+}
 
 export default Calculator_col;
