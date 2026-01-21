@@ -60,16 +60,33 @@
 .social {
   display: flex;
   gap: 16px;
-  font-size: 22px;
 }
 
 .social a {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+
   color: #ffffff;
-  transition: 0.3s;
+  font-size: 20px;
+
+  transition: all 0.3s ease;
+
+  backdrop-filter: blur(4px);
 }
 
+/* Hover elegante */
 .social a:hover {
-  color: #f4c300;
+  background: #f4c300;
+  color: #004a80;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(244, 195, 0, 0.35);
 }
 
 /* COPY */

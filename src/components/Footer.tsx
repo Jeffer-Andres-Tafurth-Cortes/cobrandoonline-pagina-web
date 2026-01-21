@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className={styles.copy}>© 2025 Pravice Abogados</div>
+      <div className={styles.copy}>© 2026 Pravice Abogados</div>
     </footer>
   );
 }
