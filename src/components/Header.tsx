@@ -18,7 +18,7 @@ export default function Header() {
             <Link href="/conocenos">Conocenos</Link>
           </li>
           <li>
-            <Link href="/espana">España</Link>
+            <Link href="/blog">Blog</Link>
           </li>
           <li>
             <Link href="/contactanos">Contactanos</Link>

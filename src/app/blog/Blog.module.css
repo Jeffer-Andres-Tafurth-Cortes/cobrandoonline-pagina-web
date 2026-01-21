@@ -1,0 +1,104 @@
+/* ================= HERO ================= */
+.hero {
+  padding: 90px 20px 60px;
+  background: linear-gradient(180deg, #0e2a38, #081a23);
+  color: white;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #f7c600;
+  color: #000;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.2;
+}
+
+.title span {
+  color: #f7c600;
+}
+
+.description {
+  max-width: 700px;
+  margin: 20px auto 0;
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+/* ================= BLOG ================= */
+.blogSection {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+
+.blogGrid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.blogCard {
+  background: white;
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.blogCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+}
+
+.cardTag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #f7c600;
+  margin-bottom: 10px;
+}
+
+.blogCard h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.blogCard p {
+  font-size: 14.5px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ================= CALCULADORA ================= */
+.calculatorSection {
+  padding: 80px 20px;
+  background: white;
+}
+
+.calculatorWrapper {
+  max-width: 520px;
+  margin: 40px auto 0;
+}

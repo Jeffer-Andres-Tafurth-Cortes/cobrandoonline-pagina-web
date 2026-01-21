@@ -9,67 +9,99 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Calculator_col() {
-  const [amount, setAmount] = useState<number | "">("");
+  const [amountFormatted, setAmountFormatted] = useState("");
+  const [amount, setAmount] = useState<number | null>(null);
   const [days, setDays] = useState<number | "">("");
-  const [totalToPay, setTotalToPay] = useState<number | null>(null);
   const [commission, setCommission] = useState<number | null>(null);
+
+  /* ================================
+     UTILIDADES
+  ================================ */
+
+  const formatCurrency = (value: number) =>
+    value.toLocaleString("es-CO", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+
+  const parseCurrency = (value: string) => Number(value.replace(/\./g, ""));
+
+  /* ================================
+     HANDLERS
+  ================================ */
+
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const raw = e.target.value.replace(/\D/g, "");
+    if (!raw) {
+      setAmountFormatted("");
+      setAmount(null);
+      setCommission(null);
+      return;
+    }
+
+    const numeric = parseCurrency(raw);
+    setAmount(numeric);
+    setAmountFormatted(formatCurrency(numeric));
+  };
 
   const handleCalculate = () => {
     if (!amount || !days) return;
 
-    // 🧮 Fórmulas personalizables
-    const total = amount * 1.015; // +1.5%
-    const comision = total * 0.2; // 20%
-
-    setTotalToPay(total);
-    setCommission(comision);
+    // 📌 Comisión aproximada (25%)
+    const estimatedCommission = amount * 0.25;
+    setCommission(estimatedCommission);
   };
 
-  // Formatear con separador de miles
-  const formatCurrency = (value: number) =>
-    value.toLocaleString("es-CO", { minimumFractionDigits: 2 });
+  /* ================================
+     RENDER
+  ================================ */
 
   return (
     <div className={styles.card} id="calculadora">
-      <h2 className={styles.title}>Calculadora de Costos</h2>
+      <h2 className={styles.title}>Calculadora de Comisión</h2>
 
       <label>Monto adeudado ($):</label>
       <input
         className={styles.input}
-        type="number"
-        placeholder="Ingrese el monto"
-        value={amount}
-        onChange={(e) => setAmount(Number(e.target.value))}
+        type="text"
+        inputMode="numeric"
+        placeholder="Ej: 2.500.000"
+        value={amountFormatted}
+        onChange={handleAmountChange}
       />
 
       <label className={styles.label}>Días de mora:</label>
       <input
         className={styles.input}
         type="number"
-        placeholder="Ingrese los días de mora"
+        placeholder="Ej: 90"
         value={days}
         onChange={(e) => setDays(Number(e.target.value))}
       />
 
       <button className={styles.button} onClick={handleCalculate}>
-        Calcular
+        Calcular aproximado
       </button>
 
-      {totalToPay !== null && (
+      {amount && commission !== null && (
         <div className={styles.resultBox}>
           <p className={styles.resultItem}>
             <span>
-              <FontAwesomeIcon icon={faMoneyCheck} /> Total a pagar:&nbsp;
+              <FontAwesomeIcon icon={faMoneyCheck} /> Total de la deuda:&nbsp;
             </span>
-            <b>${formatCurrency(totalToPay)}</b>
+            <b>${formatCurrency(amount)}</b>
           </p>
 
           <p className={styles.resultItem}>
             <span>
-              <FontAwesomeIcon icon={faBalanceScale} /> Comisión Cobrando
-              Online:&nbsp;
+              <FontAwesomeIcon icon={faBalanceScale} /> Comisión
+              aproximada:&nbsp;
             </span>
-            <b>${formatCurrency(commission!)}</b>
+            <b>${formatCurrency(commission)}</b>
+          </p>
+
+          <p className={styles.note}>
+            * Este valor es un cálculo estimado y puede variar.
           </p>
         </div>
       )}
