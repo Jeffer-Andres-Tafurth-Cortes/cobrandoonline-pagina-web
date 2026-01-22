@@ -27,6 +27,7 @@
     "react-typed": "^2.0.12"
   },
   "devDependencies": {
+    "@types/html-pdf-node": "^1.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
