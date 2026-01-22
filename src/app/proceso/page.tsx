@@ -9,7 +9,6 @@ import {
   faCircleInfo,
   faFileDownload,
 } from "@fortawesome/free-solid-svg-icons";
-import html2pdf from "html2pdf.js";
 import { contratoHTML } from "@/utils/contratoTemplate";
 
 /* ================================
@@ -60,7 +59,9 @@ export default function Proceso() {
   /* ================================
      DESCARGAR CONTRATO (PDF CLIENTE)
   ================================ */
-  const handleDownloadContract = () => {
+  const handleDownloadContract = async () => {
+    const html2pdf = (await import("html2pdf.js")).default;
+
     const html = contratoHTML({
       nombre: formData.nombre,
       tipoPersona: formData.tipoPersona,
@@ -78,7 +79,7 @@ export default function Proceso() {
         margin: 1,
         filename: "Contrato_Cobrando_Online.pdf",
         image: {
-          type: "jpeg" as "jpeg", // ✅ FIX TypeScript
+          type: "jpeg",
           quality: 0.98,
         },
         html2canvas: {
