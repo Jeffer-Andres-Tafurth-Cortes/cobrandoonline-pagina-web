@@ -9,6 +9,8 @@ import {
   faCircleInfo,
   faFileDownload,
 } from "@fortawesome/free-solid-svg-icons";
+import html2pdf from "html2pdf.js";
+import { contratoHTML } from "@/utils/contratoTemplate";
 
 /* ================================
    UTILIDAD: FORMATO MILES
@@ -25,11 +27,10 @@ export default function Proceso() {
     documento: "",
     correo: "",
     telefono: "",
-    valorCartera: "", // con puntos
+    valorCartera: "",
     observaciones: "",
   });
 
-  // Valor limpio (numérico) para cálculos / contrato
   const [valorCarteraNumber, setValorCarteraNumber] = useState<number>(0);
 
   const handleChange = (
@@ -39,10 +40,8 @@ export default function Proceso() {
   ) => {
     const { name, value } = e.target;
 
-    // 🎯 Formateo especial para valor de cartera
     if (name === "valorCartera") {
       const formatted = formatThousands(value);
-
       setFormData({ ...formData, valorCartera: formatted });
       setValorCarteraNumber(Number(formatted.replace(/\./g, "")));
       return;
@@ -58,62 +57,62 @@ export default function Proceso() {
     );
   };
 
-  const handleDownloadContract = async () => {
-    try {
-      const response = await fetch("/api/contrato", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+  /* ================================
+     DESCARGAR CONTRATO (PDF CLIENTE)
+  ================================ */
+  const handleDownloadContract = () => {
+    const html = contratoHTML({
+      nombre: formData.nombre,
+      tipoPersona: formData.tipoPersona,
+      documento: formData.documento,
+      correo: formData.correo,
+      telefono: formData.telefono,
+      valorCartera: valorCarteraNumber,
+    });
+
+    const element = document.createElement("div");
+    element.innerHTML = html;
+
+    html2pdf()
+      .set({
+        margin: 1,
+        filename: "Contrato_Cobrando_Online.pdf",
+        image: {
+          type: "jpeg" as "jpeg", // ✅ FIX TypeScript
+          quality: 0.98,
         },
-        body: JSON.stringify({
-          ...formData,
-          valorCartera: valorCarteraNumber,
-        }),
-      });
-
-      if (!response.ok) {
-        const text = await response.text();
-        console.error(text);
-        alert("Error generando el contrato");
-        return;
-      }
-
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "Contrato_Cobrando_Online.pdf";
-      a.click();
-
-      window.URL.revokeObjectURL(url);
-    } catch (err) {
-      console.error(err);
-      alert("Error de conexión con el servidor");
-    }
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+        },
+        jsPDF: {
+          unit: "cm",
+          format: "a4",
+          orientation: "portrait",
+        },
+      })
+      .from(element)
+      .save();
   };
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* =====================================================
-            CONTACTO INICIAL
-        ====================================================== */}
+        {/* =====================================
+            HEADER
+        ===================================== */}
         <div className={styles.header}>
           <h1>Inicia tu proceso de recuperación de cartera</h1>
 
           <p>
             Puedes comunicarte con nosotros vía <strong>WhatsApp</strong> para
-            resolver cualquier inquietud. Estamos disponibles para llamadas o
-            mensajes.
+            resolver cualquier inquietud.
           </p>
 
           <div className={styles.highlight}>
             <FontAwesomeIcon icon={faCircleInfo} />
             <span>
-              Te ofrecemos una <strong>asesoría gratuita de 15 minutos</strong>{" "}
-              para analizar tu caso y orientarte sobre la recuperación de tu
-              cartera.
+              Te ofrecemos una <strong>asesoría gratuita de 15 minutos</strong>.
             </span>
           </div>
 
@@ -130,9 +129,9 @@ export default function Proceso() {
           </div>
         </div>
 
-        {/* =====================================================
+        {/* =====================================
             FORMULARIO
-        ====================================================== */}
+        ===================================== */}
         <div className={styles.formSection}>
           <h2>Datos para generar el contrato</h2>
 
@@ -201,7 +200,6 @@ export default function Proceso() {
               <input
                 type="text"
                 name="valorCartera"
-                placeholder="Ej: $25.000.000"
                 value={`$${formData.valorCartera}`}
                 onChange={handleChange}
               />
@@ -228,20 +226,18 @@ export default function Proceso() {
             </button>
 
             <small>
-              Descarga el contrato, fírmalo y envíalo al correo{" "}
-              <strong>contacto@tudominio.com</strong> para iniciar el proceso.
+              Descarga el contrato, fírmalo y envíalo a{" "}
+              <strong>contacto@tudominio.com</strong>.
             </small>
           </div>
         </div>
 
-        {/* =====================================================
-            CONTINUAR PROCESO
-        ====================================================== */}
+        {/* =====================================
+            FOOTER
+        ===================================== */}
         <div className={styles.footerAction}>
           <p>
-            Si deseas continuar con el proceso, comunícate con nosotros vía
-            WhatsApp para realizar el pago correspondiente y dar inicio a la
-            gestión de cobro.
+            Para continuar con el proceso, comunícate con nosotros vía WhatsApp.
           </p>
 
           <button className={styles.whatsappBtn} onClick={handleWhatsApp}>
