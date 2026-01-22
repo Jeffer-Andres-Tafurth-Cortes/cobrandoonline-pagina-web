@@ -22,9 +22,7 @@ export async function POST(req: Request) {
 
     let browser;
 
-    // 🧠 DETECTAR ENTORNO
     if (process.env.VERCEL) {
-      // ====== VERCEL ======
       const chromium = (await import("@sparticuz/chromium")).default;
       const puppeteer = (await import("puppeteer-core")).default;
 
@@ -33,8 +31,7 @@ export async function POST(req: Request) {
         executablePath: await chromium.executablePath(),
       });
     } else {
-      // ====== LOCAL ======
-      const puppeteer = (await import("puppeteer")).default;
+      const puppeteer: any = (await import("puppeteer")).default;
 
       browser = await puppeteer.launch({
         headless: true,
