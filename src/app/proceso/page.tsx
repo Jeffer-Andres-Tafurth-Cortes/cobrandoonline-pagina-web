@@ -59,33 +59,38 @@ export default function Proceso() {
   };
 
   const handleDownloadContract = async () => {
-    const response = await fetch("/api/contrato", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ...formData,
-        valorCartera: valorCarteraNumber, // 👈 valor limpio
-      }),
-    });
+    try {
+      const response = await fetch("/api/contrato", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          valorCartera: valorCarteraNumber,
+        }),
+      });
 
-    if (!response.ok) {
-      alert("Error generando el contrato");
-      return;
+      if (!response.ok) {
+        const text = await response.text();
+        console.error(text);
+        alert("Error generando el contrato");
+        return;
+      }
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Contrato_Cobrando_Online.pdf";
+      a.click();
+
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error(err);
+      alert("Error de conexión con el servidor");
     }
-
-    const blob = await response.blob();
-    const url = window.URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "Contrato_Cobrando_Online.pdf"; // ✅ PDF
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    window.URL.revokeObjectURL(url);
   };
 
   return (
