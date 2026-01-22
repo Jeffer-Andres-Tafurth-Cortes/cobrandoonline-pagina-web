@@ -1,16 +1,12 @@
 "use client";
 
 import styles from "./styles/MiddleHero.module.css";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 const handleClick = () => {
-  window.open(
-    "https://api.whatsapp.com/message/2SLJSZ5EUTDGP1?autoload=1&app_absent=0",
-    "_blank"
-  );
+  window.open("/proceso", "_blank");
 };
 
 export default function MiddleHero() {
@@ -18,22 +14,22 @@ export default function MiddleHero() {
     <section className={styles.section}>
       <div className={styles.wrapper}>
         {/* =====================================================
-            IMAGEN IZQUIERDA (Animación Slide-in)
+            VIDEO IZQUIERDO (Placeholder)
         ====================================================== */}
         <motion.div
-          className={styles.imageContainer}
+          className={styles.videoContainer}
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <Image
-            src="/hero-section.jpg.webp"
-            alt="Como Funciona"
-            width={650}
-            height={450}
-            className={styles.image}
-          />
+          {/* 
+            Aquí luego solo reemplazas este div por:
+            <video src="..." controls autoPlay muted loop />
+          */}
+          <div className={styles.videoPlaceholder}>
+            <span>VIDEO PRÓXIMAMENTE</span>
+          </div>
         </motion.div>
 
         {/* =====================================================
@@ -79,9 +75,7 @@ export default function MiddleHero() {
             lograr la recuperación efectiva de tus deudas:
           </motion.p>
 
-          {/* =====================================================
-              LISTA CON ANIMACIÓN ESCALONADA (stagger)
-          ====================================================== */}
+          {/* LISTA */}
           <motion.ul
             className={styles.list}
             initial="hidden"
@@ -91,10 +85,10 @@ export default function MiddleHero() {
           >
             {[
               "Análisis del caso: Evaluamos la información y viabilidad del cobro.",
-              "Gestión amistosa: Negociamos acuerdos de pago sin necesidad de acciones legales.",
-              "Proceso jurídico: Si no hay acuerdo, iniciamos acciones legales.",
-              "Seguimiento constante: Te mantenemos informado en cada etapa.",
-              "Resultados efectivos: Priorizamos rapidez y efectividad.",
+              "Gestión amistosa: Negociamos acuerdos de pago sin acciones legales.",
+              "Proceso jurídico: Activamos medidas legales si es necesario.",
+              "Seguimiento constante: Información clara en cada etapa.",
+              "Resultados efectivos: Rapidez y efectividad como prioridad.",
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -111,9 +105,7 @@ export default function MiddleHero() {
             ))}
           </motion.ul>
 
-          {/* =====================================================
-              BOTÓN ANIMADO
-          ====================================================== */}
+          {/* BOTÓN */}
           <motion.button
             className={styles.button}
             onClick={handleClick}
@@ -124,7 +116,7 @@ export default function MiddleHero() {
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            Empieza Ahora
+            Deseas Iniciar
           </motion.button>
         </motion.div>
       </div>

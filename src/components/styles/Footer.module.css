@@ -1,117 +1,158 @@
 .footer {
   background: #004a80;
   color: #ffffff;
-  padding: 60px 20px 20px;
+  padding: 64px 20px 24px;
   width: 100%;
 }
 
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
 .container {
   max-width: 1300px;
   margin: 0 auto;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 40px;
+  gap: 48px;
   flex-wrap: wrap;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* LOGO + TEXTO */
+/* ==============================
+   LOGO + TEXTO
+============================== */
 .left {
-  flex: 1 1 350px;
+  flex: 1 1 380px;
 }
 
 .logo {
   width: 180px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .text {
-  line-height: 1.4;
-  color: #5eb3e4;
-  max-width: 500px;
+  line-height: 1.55;
+  font-size: 15px;
+  color: #b9e0f7;
+  max-width: 520px;
+  margin-bottom: 14px;
 }
 
-/* HORARIO */
+/* Nota institucional */
+.brandNote {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  padding-left: 12px;
+  border-left: 3px solid #f4c300;
+}
+
+/* ==============================
+   HORARIO
+============================== */
 .schedule {
-  flex: 1 1 200px;
+  flex: 1 1 220px;
   display: flex;
-  gap: 12px;
+  gap: 14px;
   align-items: flex-start;
 }
 
 .icon {
-  font-size: 24px;
+  font-size: 26px;
   color: #f4c300;
+  margin-top: 2px;
 }
 
 .schedule h4 {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: #ffffff;
+  margin-bottom: 4px;
 }
 
 .schedule p {
-  margin-top: 4px;
-  color: #5eb3e4;
+  color: #b9e0f7;
+  font-size: 14px;
 }
 
-/* SOCIAL */
+/* ==============================
+   REDES SOCIALES
+============================== */
 .social {
   display: flex;
   gap: 16px;
+  align-items: center;
 }
 
 .social a {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
 
   color: #ffffff;
   font-size: 20px;
 
-  transition: all 0.3s ease;
-
-  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
 }
 
 /* Hover elegante */
 .social a:hover {
   background: #f4c300;
   color: #004a80;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(244, 195, 0, 0.35);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(244, 195, 0, 0.35);
 }
 
-/* COPY */
+/* ==============================
+   COPYRIGHT
+============================== */
 .copy {
   text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(94, 179, 228, 0.2);
-  margin-top: 40px;
-  font-size: 14px;
-  color: #5eb3e4;
+  padding-top: 28px;
+  border-top: 1px solid rgba(185, 224, 247, 0.25);
+  margin-top: 48px;
+  font-size: 13px;
+  color: #b9e0f7;
 }
 
-/* RESPONSIVE */
+/* ==============================
+   RESPONSIVE
+============================== */
 @media (max-width: 768px) {
   .container {
     text-align: center;
     flex-direction: column;
     align-items: center;
-  }
-
-  .schedule {
-    justify-content: center;
+    gap: 36px;
   }
 
   .left {
     text-align: center;
+  }
+
+  .text,
+  .brandNote {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .brandNote {
+    border-left: none;
+    border-top: 2px solid #f4c300;
+    padding-left: 0;
+    padding-top: 10px;
+  }
+
+  .schedule {
+    justify-content: center;
   }
 }
