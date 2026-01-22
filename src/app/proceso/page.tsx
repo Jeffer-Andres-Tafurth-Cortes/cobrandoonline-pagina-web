@@ -64,7 +64,10 @@ export default function Proceso() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        ...formData,
+        valorCartera: valorCarteraNumber, // 👈 valor limpio
+      }),
     });
 
     if (!response.ok) {
@@ -77,10 +80,12 @@ export default function Proceso() {
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = "Contrato_Cobrando_Online.docx";
+    a.download = "Contrato_Cobrando_Online.pdf"; // ✅ PDF
     document.body.appendChild(a);
     a.click();
     a.remove();
+
+    window.URL.revokeObjectURL(url);
   };
 
   return (
