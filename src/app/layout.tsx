@@ -43,8 +43,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-CO">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FinancialService",
+              name: "Cobrando Online",
+              url: "https://www.cobrandoonline.com",
+              logo: "https://www.cobrandoonline.com/logo-cobrando-online.jpg",
+              areaServed: "CO",
+              sameAs: [
+                "https://www.facebook.com/tu-facebook",
+                "https://www.instagram.com/tu-instagram",
+                "https://www.tiktok.com/@tu-tiktok",
+              ],
+            }),
+          }}
+        />
         <TopBar />
         <Header />
         {children}

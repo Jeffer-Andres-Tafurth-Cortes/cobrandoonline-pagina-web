@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import styles from "./styles/Benefits.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserTie,
@@ -13,114 +11,106 @@ import {
   faUserCog,
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
+import styles from "./styles/Benefits.module.css";
 
 const items = [
   {
-    icon: <FontAwesomeIcon icon={faUserTie} />,
-    frontTitle: "Gestión profesional",
-    frontText: "Tu cartera en manos expertas.",
-    backTitle: "Gestión profesional",
-    backText:
-      "Contamos con especialistas en recuperación de cartera que siguen procesos legales y éticos, garantizando eficiencia sin afectar la relación con tus clientes.",
+    icon: faUserTie,
+    title: "Gestión profesional",
+    subtitle: "Cobranza experta y estructurada",
+    highlights: [
+      "Cobranza ética y controlada",
+      "Gestión prejurídica y jurídica",
+    ],
+    description:
+      "Nuestro equipo especializado administra tu cartera con procesos profesionales de cobranza ética, negociación estratégica y acciones legales controladas, maximizando la recuperación sin afectar la relación con tus clientes.",
   },
   {
-    icon: <FontAwesomeIcon icon={faClock} />,
-    frontTitle: "Ahorro de tiempo",
-    frontText: "Nos encargamos, tú te enfocas en tu negocio.",
-    backTitle: "Ahorro de tiempo",
-    backText:
-      "Delegar la cobranza te permite dedicar más tiempo a tu actividad principal, mientras nosotros aceleramos la recuperación.",
+    icon: faClock,
+    title: "Ahorro de tiempo",
+    subtitle: "Nosotros cobramos por ti",
+    highlights: ["Menos carga operativa", "Recuperación más rápida"],
+    description:
+      "Al delegar la cobranza, liberas tiempo y recursos internos. Nos encargamos del seguimiento completo mientras tú te enfocas en hacer crecer tu negocio.",
   },
   {
-    icon: <FontAwesomeIcon icon={faCheckCircle} />,
-    frontTitle: "Alta tasa de éxito",
-    frontText: "Más pagos, menos preocupaciones.",
-    backTitle: "Alta tasa de éxito",
-    backText:
-      "Aplicamos estrategias efectivas que aumentan la probabilidad de recuperar cartera, con soluciones personalizadas.",
+    icon: faCheckCircle,
+    title: "Alta tasa de éxito",
+    subtitle: "Estrategias que funcionan",
+    highlights: ["Casos personalizados", "Mayor probabilidad de pago"],
+    description:
+      "Aplicamos estrategias ajustadas a cada tipo de deudor, aumentando significativamente la probabilidad de recuperación de cartera.",
   },
   {
-    icon: <FontAwesomeIcon icon={faGlobe} />,
-    frontTitle: "Plataforma online 24/7",
-    frontText: "Todo el proceso al alcance de un clic.",
-    backTitle: "Plataforma online 24/7",
-    backText:
-      "Gestiona tus cobros y consulta reportes actualizados desde cualquier dispositivo gracias a nuestra plataforma en línea.",
+    icon: faGlobe,
+    title: "Plataforma online 24/7",
+    subtitle: "Control total en tiempo real",
+    highlights: ["Acceso desde cualquier lugar", "Reportes actualizados"],
+    description:
+      "Consulta el estado de tus casos, pagos y reportes desde cualquier dispositivo a través de nuestra plataforma digital disponible las 24 horas.",
   },
   {
-    icon: <FontAwesomeIcon icon={faHandHoldingUsd} />,
-    frontTitle: "Sin pagos por adelantado",
-    frontText: "Ganas solo si nosotros ganamos.",
-    backTitle: "Sin pagos por adelantado",
-    backText:
-      "Solo cobramos si recuperamos tu dinero, garantizando nuestro compromiso con resultados reales.",
+    icon: faHandHoldingUsd,
+    title: "Sin pagos por adelantado",
+    subtitle: "Resultados primero",
+    highlights: ["Sin costos iniciales", "Modelo basado en éxito"],
+    description:
+      "Solo cobramos honorarios cuando logramos recuperar tu dinero, alineando nuestro trabajo directamente con tus resultados.",
   },
   {
-    icon: <FontAwesomeIcon icon={faBalanceScale} />,
-    frontTitle: "Proceso legal transparente",
-    frontText: "Todo bajo normativa vigente.",
-    backTitle: "Proceso legal transparente",
-    backText:
-      "Cumplimos con toda la legislación vigente, protegiendo tu empresa de riesgos legales.",
+    icon: faBalanceScale,
+    title: "Proceso legal transparente",
+    subtitle: "Cumplimiento normativo",
+    highlights: ["Marco legal vigente", "Gestión documentada"],
+    description:
+      "Todos nuestros procesos cumplen estrictamente con la legislación vigente, reduciendo riesgos legales y protegiendo tu empresa.",
   },
   {
-    icon: <FontAwesomeIcon icon={faUserCog} />,
-    frontTitle: "Asesoramiento personalizado",
-    frontText: "Acompañamiento en cada etapa.",
-    backTitle: "Asesoramiento personalizado",
-    backText:
-      "Brindamos asesoría legal y financiera adaptada a tu negocio para mejores decisiones.",
+    icon: faUserCog,
+    title: "Asesoramiento personalizado",
+    subtitle: "Acompañamiento experto",
+    highlights: ["Análisis de tu cartera", "Decisiones informadas"],
+    description:
+      "Brindamos asesoría legal y financiera adaptada a la realidad de tu negocio para optimizar decisiones y resultados.",
   },
   {
-    icon: <FontAwesomeIcon icon={faChartLine} />,
-    frontTitle: "Mejora del flujo de caja",
-    frontText: "Recupera tu dinero y fortalece tu empresa.",
-    backTitle: "Mejora del flujo de caja",
-    backText:
-      "La recuperación de cartera mejora tu liquidez y la estabilidad financiera de tu negocio.",
+    icon: faChartLine,
+    title: "Mejora del flujo de caja",
+    subtitle: "Liquidez para crecer",
+    highlights: ["Ingresos recuperados", "Mayor estabilidad financiera"],
+    description:
+      "La recuperación efectiva de cartera impacta directamente en tu liquidez, fortaleciendo la estabilidad y proyección financiera de tu empresa.",
   },
 ];
 
 export default function Benefits() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Confianza que se refleja en resultados</h2>
-      <p className={styles.subtitle}>
-        Conoce las experiencias de quienes han recuperado su cartera con nuestro
-        acompañamiento.
-      </p>
-
       <div className={styles.grid}>
-        {items.map((item, i) => (
-          <motion.div
-            key={i}
-            className={styles.card}
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{
-              duration: 0.45,
-              delay: i * 0.12,
-              ease: "easeOut",
-            }}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-          >
+        {items.map((item, index) => (
+          <div key={index} className={styles.card}>
             <div className={styles.inner}>
-              {/* FRONT */}
+              {/* Front */}
               <div className={styles.front}>
-                <span className={styles.icon}>{item.icon}</span>
-                <h3>{item.frontTitle}</h3>
-                <p>{item.frontText}</p>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon icon={item.icon} />
+                </div>
+                <h3>{item.title}</h3>
+                <p className={styles.subtitle}>{item.subtitle}</p>
+                <ul>
+                  {item.highlights.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
               </div>
 
-              {/* BACK */}
+              {/* Back */}
               <div className={styles.back}>
-                <h3>{item.backTitle}</h3>
-                <p>{item.backText}</p>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

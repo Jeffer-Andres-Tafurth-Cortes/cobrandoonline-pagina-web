@@ -13,7 +13,7 @@ const leftColumn: Question[] = [
   {
     question: "¿Qué es Cobrando Online?",
     answer:
-      "Cobrando Online es una plataforma especializada en la gestión de cobros en España, ayudando a empresas a recuperar facturas impagadas de forma rápida, segura y 100% digital.",
+      "Cobrando Online es una plataforma especializada en la gestión de cobros en Colombia, ayudando a empresas a recuperar facturas impagadas de forma rápida, segura y 100% digital.",
   },
   {
     question: "¿Cómo funciona el proceso de cobro?",

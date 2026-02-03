@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const handleClick = () => {
   window.open(
     "https://api.whatsapp.com/message/2SLJSZ5EUTDGP1?autoload=1&app_absent=0",
-    "_blank"
+    "_blank",
   );
 };
 
@@ -32,7 +32,7 @@ export default function AboutMiddle() {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.4 }}
         >
-          <FontAwesomeIcon icon={faClock} /> SOLUCIONES A TU MEDIDA
+          <FontAwesomeIcon icon={faClock} /> SOLUCIONES DE COBRANZA EMPRESARIAL
         </motion.span>
 
         <motion.h1
@@ -41,7 +41,7 @@ export default function AboutMiddle() {
           viewport={{ once: true }}
           transition={{ delay: 0.35, duration: 0.45 }}
         >
-          ¿Tus clientes no están cumpliendo con los pagos a tiempo?
+          ¿Tienes pagos vencidos que afectan el flujo de caja de tu empresa?
         </motion.h1>
 
         <motion.p
@@ -50,9 +50,11 @@ export default function AboutMiddle() {
           viewport={{ once: true }}
           transition={{ delay: 0.45, duration: 0.45 }}
         >
-          En <strong>Cobrando Online</strong> gestionamos la recuperación de tus
-          pagos pendientes para que tu empresa mantenga su flujo de caja sin
-          afectar la relación con tus clientes.
+          En <strong>Cobrando Online</strong> somos especialistas en
+          recuperación de cartera y gestión de cobros para empresas. Nos
+          encargamos del seguimiento y la negociación de pagos pendientes
+          mediante procesos éticos, legales y estratégicos, ayudándote a
+          recuperar tu dinero sin deteriorar la relación con tus clientes.
         </motion.p>
 
         {/* LISTA CON ANIMACIÓN EN CASCADA */}
@@ -64,9 +66,9 @@ export default function AboutMiddle() {
           transition={{ staggerChildren: 0.2 }}
         >
           {[
-            "Gestión rápida y segura",
-            "Sin adelantos ni cuotas iniciales",
-            "Comunicación profesional con tus clientes",
+            "Recuperación de cartera rápida, segura y profesional",
+            "Modelo de cobro sin pagos anticipados ni costos ocultos",
+            "Gestión de cobranza respetuosa y alineada a la normativa legal",
           ].map((text, i) => (
             <motion.li
               key={i}
@@ -88,7 +90,7 @@ export default function AboutMiddle() {
           viewport={{ once: true }}
           transition={{ delay: 0.75, duration: 0.4 }}
         >
-          ¡Confía en expertos para recuperar lo que es tuyo!
+          Recupera tu cartera vencida con el respaldo de expertos en cobranza.
         </motion.strong>
 
         <motion.button
@@ -101,7 +103,7 @@ export default function AboutMiddle() {
           viewport={{ once: true }}
           transition={{ delay: 0.85, duration: 0.45 }}
         >
-          Solicita tu cobro aquí
+          Solicita tu recuperación de cartera
         </motion.button>
       </motion.div>
 
@@ -115,7 +117,10 @@ export default function AboutMiddle() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <img src="/about-middle.webp" alt="Equipo de trabajo" />
+        <img
+          src="/about-middle.webp"
+          alt="Equipo especializado en recuperación de cartera y gestión de cobros empresariales"
+        />
       </motion.div>
     </section>
   );

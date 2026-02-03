@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const handleClick = () => {
   window.open(
     "https://api.whatsapp.com/message/2SLJSZ5EUTDGP1?autoload=1&app_absent=0",
-    "_blank"
+    "_blank",
   );
 };
 
@@ -19,7 +19,7 @@ export default function About() {
       <section className={styles.about}>
         {/* ============================
           IMAGEN IZQUIERDA ANIMADA
-      ============================= */}
+        ============================= */}
         <motion.div
           className={styles.image}
           initial={{ opacity: 0, x: -80 }}
@@ -27,12 +27,15 @@ export default function About() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <img src="/doc-leidy.jpeg" alt="Abogada" />
+          <img
+            src="/doc-leidy.jpeg"
+            alt="Abogada especialista en recuperación de cartera y gestión de cobros empresariales"
+          />
         </motion.div>
 
         {/* ============================
           TEXTO + TIMELINE DERECHA
-      ============================= */}
+        ============================= */}
         <motion.div
           className={styles.content}
           initial={{ opacity: 0, x: 80 }}
@@ -55,8 +58,8 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ delay: 0.35, duration: 0.5 }}
           >
-            En Cobrando Online, nos apasiona la excelencia en la gestión de
-            cobros.
+            En Cobrando Online somos expertos en gestión y recuperación de
+            cartera para empresas.
           </motion.h2>
 
           <motion.p
@@ -65,16 +68,18 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            Con más de 23 años de experiencia, somos una plataforma digital
-            respaldada por la trayectoria de Pravice Abogados, especializada en
-            la recuperación de cartera para empresas. Nuestra labor se basa en
-            la transparencia, la honestidad y la eficiencia, ofreciendo
-            soluciones personalizadas que garantizan resultados efectivos.
+            Con más de 23 años de experiencia, Cobrando Online es una plataforma
+            digital de gestión de cobros respaldada por la trayectoria jurídica
+            de Pravice Abogados. Nos especializamos en la recuperación de
+            cartera para empresas mediante procesos de cobranza prejurídica y
+            jurídica, basados en la transparencia, la eficiencia y el
+            cumplimiento normativo, ofreciendo soluciones personalizadas
+            orientadas a resultados reales.
           </motion.p>
 
           {/* ============================
             TIMELINE CON STAGGER EFFECT
-        ============================= */}
+          ============================= */}
           <motion.div
             className={styles.timeline}
             initial="hidden"
@@ -86,17 +91,17 @@ export default function About() {
               {
                 year: "1998",
                 title: "Fundación",
-                text: "Fundación de Pravice Abogados, especializándose en servicios legales y recuperación de cartera.",
+                text: "Fundación de Pravice Abogados, firma jurídica especializada en recuperación de cartera y asesoría legal empresarial.",
               },
               {
                 year: "2005",
                 title: "Expansión",
-                text: "Expansión de servicios para ofrecer asesoría en múltiples áreas del derecho.",
+                text: "Expansión de servicios legales para atender múltiples áreas del derecho, fortaleciendo los procesos de cobranza y recuperación de cartera.",
               },
               {
                 year: "2015",
                 title: "Digitalización",
-                text: "Creación de Cobrando Online, plataforma digital para la gestión eficiente de cobros.",
+                text: "Lanzamiento de Cobrando Online, plataforma digital creada para optimizar la gestión de cobros empresariales de forma eficiente y transparente.",
               },
             ].map((item, i) => (
               <motion.div
@@ -118,7 +123,7 @@ export default function About() {
 
           {/* ============================
             BOTÓN ANIMADO
-        ============================= */}
+          ============================= */}
           <motion.button
             className={styles.button}
             onClick={handleClick}
@@ -133,6 +138,7 @@ export default function About() {
           </motion.button>
         </motion.div>
       </section>
+
       <AboutMiddle />
       <Stats />
       <FAQ />

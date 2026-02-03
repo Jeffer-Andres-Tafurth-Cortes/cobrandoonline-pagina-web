@@ -11,7 +11,7 @@ const handleClick = () => {
 
 export default function MiddleHero() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="como-funciona-title">
       <div className={styles.wrapper}>
         {/* =====================================================
             VIDEO IZQUIERDO (Placeholder)
@@ -28,7 +28,13 @@ export default function MiddleHero() {
             <video src="..." controls autoPlay muted loop />
           */}
           <div className={styles.videoPlaceholder}>
-            <span>VIDEO PRÓXIMAMENTE</span>
+            <video
+              src="/"
+              controls
+              muted
+              preload="metadata"
+              aria-label="Video explicativo del proceso de recuperación de cartera"
+            />
           </div>
         </motion.div>
 
@@ -54,6 +60,7 @@ export default function MiddleHero() {
 
           <motion.h2
             className={styles.title}
+            id="como-funciona-title"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -69,10 +76,12 @@ export default function MiddleHero() {
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            En <strong>Cobrando Online</strong> nos encargamos de la
-            recuperación de tu cartera de manera ágil y segura. Nuestro proceso
-            combina la negociación directa con herramientas jurídicas para
-            lograr la recuperación efectiva de tus deudas:
+            En <strong>Cobrando Online</strong> gestionamos la
+            <strong> recuperación de cartera vencida</strong> de forma ágil,
+            segura y transparente. Nuestro proceso combina negociación directa,
+            gestión prejurídica y herramientas legales para lograr el
+            <strong> cobro efectivo de deudas</strong> en personas naturales,
+            empresas y entidades del sector salud.
           </motion.p>
 
           {/* LISTA */}
@@ -84,11 +93,11 @@ export default function MiddleHero() {
             transition={{ staggerChildren: 0.18 }}
           >
             {[
-              "Análisis del caso: Evaluamos la información y viabilidad del cobro.",
-              "Gestión amistosa: Negociamos acuerdos de pago sin acciones legales.",
-              "Proceso jurídico: Activamos medidas legales si es necesario.",
-              "Seguimiento constante: Información clara en cada etapa.",
-              "Resultados efectivos: Rapidez y efectividad como prioridad.",
+              "Análisis del caso: evaluamos la información y la viabilidad real del cobro.",
+              "Gestión amistosa: negociación directa para acuerdos de pago sin procesos judiciales.",
+              "Proceso jurídico: activación de acciones legales cuando el caso lo requiere.",
+              "Seguimiento constante: información clara y acompañamiento en cada etapa.",
+              "Resultados efectivos: rapidez, control y enfoque en la recuperación.",
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -116,7 +125,7 @@ export default function MiddleHero() {
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            Deseas Iniciar
+            Iniciar recuperación de cartera
           </motion.button>
         </motion.div>
       </div>

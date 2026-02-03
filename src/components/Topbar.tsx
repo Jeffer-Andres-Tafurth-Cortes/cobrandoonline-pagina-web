@@ -13,24 +13,29 @@ export default function TopBar() {
     <div className={styles.topBar}>
       <div className={styles.left}>
         <a
-          href="/https://www.facebook.com/praviceabogadosespecializados"
-          aria-label="Facebook"
+          href="https://www.facebook.com/praviceabogadosespecializados"
+          aria-label="Facebook de Pravice Abogados Especializados"
+          title="Síguenos en Facebook | Pravice Abogados"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faFacebookF} />
         </a>
+
         <a
-          href="/https://www.instagram.com/pravice_abogados/"
-          aria-label="Instagram"
+          href="https://www.instagram.com/pravice_abogados/"
+          aria-label="Instagram de Pravice Abogados Especializados"
+          title="Síguenos en Instagram | Pravice Abogados"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faInstagram} />
         </a>
+
         <a
           href="https://www.tiktok.com/@pravice_abogados"
-          aria-label="TikTok"
+          aria-label="TikTok de Pravice Abogados Especializados"
+          title="Síguenos en TikTok | Pravice Abogados"
           target="_blank"
           rel="noopener noreferrer"
         >

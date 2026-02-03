@@ -8,22 +8,25 @@ export default function Categories() {
     {
       number: "01",
       title: "Personas Naturales",
-      text: "Gestión rápida de cobros con comunicación amistosa y acciones legales si es necesario.",
+      text: "Brindamos soluciones efectivas para la recuperación de cartera de personas naturales, combinando gestión de cobro amistosa, seguimiento personalizado y acciones legales cuando el caso lo requiere.",
     },
     {
       number: "02",
       title: "Personas Jurídicas",
-      text: "Recuperamos deudas de empresas con negociación directa y acciones legales eficientes.",
+      text: "Apoyamos a empresas en la recuperación de deudas comerciales mediante negociación estratégica, control de cartera vencida y procesos legales eficientes orientados a resultados.",
     },
     {
       number: "03",
       title: "Entidades de Salud",
-      text: "Cobro especializado a entidades de salud, con gestión jurídica acorde a la normativa del sector.",
+      text: "Ofrecemos gestión especializada de cobros a entidades del sector salud, cumpliendo la normativa vigente y aplicando estrategias jurídicas adaptadas a la complejidad del sector.",
     },
   ];
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-labelledby="categories-title">
+      <h2 id="categories-title" className={styles.srOnly}>
+        Tipos de clientes para recuperación de cartera
+      </h2>
       <div className={styles.wrapper}>
         {items.map((item, index) => (
           <motion.div
